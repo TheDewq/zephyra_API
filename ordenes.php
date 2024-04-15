@@ -28,11 +28,14 @@
         case isset($_GET["id"]) || $_GET['wsp_num'] && isset($_GET['status']):
             //TODO ordenes::modificar_status
         break;
+        default:    
+            header("HTTP/1.1 403 ILLEGAL REQUEST");
+        break;
     }
 
     switch($_SERVER["REQUEST_METHOD"] == "DELETE"){
         case isset($_GET["id"]):
-            //TODO clase clientes
+            //TODO clase clientes::eliminar
         break;
         default:    
             header("HTTP/1.1 403 ILLEGAL REQUEST");
