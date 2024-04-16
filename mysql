@@ -1,0 +1,10 @@
+create table productos(
+	id int not null AUTO_INCREMENT,
+    nombre varchar(64) not null,
+    tipo varchar(16) not null,
+    precio int not null,
+    disponibilidad int DEFAULT -1,
+    material varchar(32),
+    tallas varchar(128) not null,
+    PRIMARY KEY (id)
+)
