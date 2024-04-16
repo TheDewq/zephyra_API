@@ -8,3 +8,50 @@ create table productos(
     tallas varchar(128) not null,
     PRIMARY KEY (id)
 )
+
+create table clientes(
+	wsp_num int(11) not null,
+    datos varchar(256) DEFAULT null,
+    ciudad varchar(64) not null,
+    fecha_creacion date DEFAULT curdate(),
+    ultima_compra date DEFAULT curdate(),
+    PRIMARY KEY(wsp_num)
+)
+
+create table descuentos(
+	id int not null AUTO_INCREMENT,
+    wsp_num int not null,
+    porcentaje tinyint(2) DEFAULT 10,
+    fecha_creacion date DEFAULT curdate(),
+    PRIMARY KEY(id),
+    FOREIGN KEY (wsp_num) REFERENCES clientes(wsp_num) ON DELETE CASCADE
+)
+
+create table ordenes(
+	id int not null AUTO_INCREMENT,
+    wsp_num int not null,
+    productos varchar(1024) not null,
+    fecha_creacion date DEFAULT curdate(),
+    descuentos int DEFAULT 0,
+    total int not null,
+    ord_status set("inconcluso","confirmado","enviado","finalizado","cancelado","reclamo") DEFAULT "inconcluso",
+    PRIMARY KEY(id),
+    FOREIGN KEY (wsp_num) REFERENCES clientes(wsp_num) ON DELETE CASCADE
+)
+
+DELIMITER $$
+CREATE PROCEDURE eliminar_registros_antiguos()
+BEGIN
+    DELETE FROM clientes WHERE ultima_compra < DATE_SUB(CURDATE(), INTERVAL 24 MONTH);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE EVENT eliminar_registros_antiguos_diariamente
+ON SCHEDULE EVERY 1 DAY
+STARTS CURRENT_TIMESTAMP
+DO
+BEGIN
+    CALL eliminar_registros_antiguos();
+END$$
+DELIMITER ;
