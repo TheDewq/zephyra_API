@@ -1,21 +1,4 @@
 <?php   
-/*
-
-    switch($_SERVER["REQUEST_METHOD"] == "DELETE"){
-        case isset($_GET["id"]):
-            //TODO clase clientes::eliminar
-        break;
-        default:    
-            header("HTTP/1.1 403 ILLEGAL REQUEST");
-        break;
-    }
-
-    if($_SERVER[REQUEST_METHOD] == "PUT" || $_SERVER[REQUEST_METHOD] == "PATCH" || $_SERVER[REQUEST_METHOD] == "HEAD" || $_SERVER[REQUEST_METHOD] == "OPTIONS"){
-        header("HTTP/1.1 403 ILLEGAL REQUEST");
-    }
-
-*/
-
 require("assets/clientesClass.php");
     switch($_SERVER['REQUEST_METHOD']){
         case 'GET':

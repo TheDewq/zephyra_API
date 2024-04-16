@@ -1,5 +1,5 @@
 <?php
-require("assets/clientesClass.php");
+require("assets/descuentosClass.php");
     switch($_SERVER['REQUEST_METHOD']){
         case 'GET': //listo
             if(isset($_GET['id'])){

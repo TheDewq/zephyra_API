@@ -36,7 +36,7 @@ class ordenes{
         
         return $json_resultados;
     }
-    public static function obtener_por_id($wsp){
+    public static function obtener_por_wsp($wsp){
         $server = db_connect();
         
         $sql = "SELECT * FROM ordenes WHERE wsp_num = :wsp;";

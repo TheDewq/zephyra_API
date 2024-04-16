@@ -89,3 +89,6 @@ BEGIN
     CALL eliminar_registros_antiguos();
 END$$
 DELIMITER ;
+
+ALTER TABLE `productos` ADD `img` VARCHAR(250) NOT NULL AFTER `tallas`;
+ALTER TABLE `productos` CHANGE `img` `img` VARCHAR(2500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL;

@@ -33,6 +33,7 @@ require("assets/clientesClass.php");
             }
         break;
         default:
+            
             header("HTTP/1.1 403 ILLEGAL REQUEST");
         break;
     }
