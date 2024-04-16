@@ -55,3 +55,37 @@ BEGIN
     CALL eliminar_registros_antiguos();
 END$$
 DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE eliminar_ordenes_antiguas()
+BEGIN
+    DELETE FROM ordenes WHERE fecha_creacion < DATE_SUB(CURDATE(), INTERVAL 6 MONTH);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE EVENT eliminar_ordenes_antiguas_diariamente
+ON SCHEDULE EVERY 1 DAY
+STARTS CURRENT_TIMESTAMP
+DO
+BEGIN
+    CALL eliminar_registros_antiguos();
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE eliminar_descuentos_antiguos()
+BEGIN
+    DELETE FROM descuentos WHERE fecha_creacion < DATE_SUB(CURDATE(), INTERVAL 45 DAY);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE EVENT eliminar_descuentos_antiguos_diariamente
+ON SCHEDULE EVERY 1 DAY
+STARTS CURRENT_TIMESTAMP
+DO
+BEGIN
+    CALL eliminar_registros_antiguos();
+END$$
+DELIMITER ;
