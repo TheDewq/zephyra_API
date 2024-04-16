@@ -36,10 +36,3 @@ require("assets/clientesClass.php");
             header("HTTP/1.1 403 ILLEGAL REQUEST");
         break;
     }
-
-
-    
-
-    if($_SERVER["REQUEST_METHOD"] == "PUT" || $_SERVER["REQUEST_METHOD"] == "PATCH" || $_SERVER["REQUEST_METHOD"] == "HEAD" || $_SERVER["REQUEST_METHOD"] == "OPTIONS"){
-        header("HTTP/1.1 403 ILLEGAL REQUEST");
-    }

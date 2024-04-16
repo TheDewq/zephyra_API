@@ -66,5 +66,18 @@ class clientes{
         }
         header("HTTP/1.1 201 USER SUCCESSFULLY DELETED");
     }
+    public static function actualizar_ultima_compra($wsp){
+        $server = db_connect();
+        
+        $sql = "UPDATE clientes set ultima_compra = curdate() WHERE wsp_num=:wsp";
+        $rpt = $server->prepare($sql);
+        $rpt->bindParam(":wsp", $wsp);
+        try{
+            $rpt->execute();
+            return 0;
+        }catch(PDOException $e){
+            return 1;
+        }
+    }
     
 }

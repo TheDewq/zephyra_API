@@ -1,35 +1,32 @@
 <?php
-
-    switch($_SERVER["REQUEST_METHOD"] == "GET"){
-        case isset($_GET['id']):
-            //TODO clase descuento::obtener_por_id
+require("assets/clientesClass.php");
+    switch($_SERVER['REQUEST_METHOD']){
+        case 'GET': //listo
+            if(isset($_GET['id'])){
+                echo descuentos::obtener_por_id($_GET["id"]);
+            }elseif(isset($_GET['wsp_num'])){
+                echo descuentos::obtener_por_wsp($_GET["wsp_num"]);
+            }else{
+                header("HTTP/1.1 403 ILLEGAL REQUEST");
+            }
         break;
-        case isset($_GET['wsp_num']):
-            //TODO clase descuento::obtener_por_wsp
+
+        case 'POST':
+            if(isset($_GET['wsp_num'])){
+                descuentos::generar_nuevo_descuento($_GET["wsp_num"]);
+            }else{
+                header("HTTP/1.1 403 ILLEGAL REQUEST");
+            }
+        break;
+
+        case 'DELETE':
+            if(isset($_GET["id"])){
+                descuentos::eliminar($_GET['id']);
+            }else{
+                header("HTTP/1.1 403 ILLEGAL REQUEST");
+            }
         break;
         default:
             header("HTTP/1.1 403 ILLEGAL REQUEST");
         break;
-    }
-
-    switch($_SERVER["REQUEST_METHOD"] == "POST"){
-        case isset($_GET['wsp_num']):
-            //TODO clase descuento::generar_nuevo_descuento
-        break;
-        default:    
-            header("HTTP/1.1 403 ILLEGAL REQUEST");
-        break;
-    }
-
-    switch($_SERVER["REQUEST_METHOD"] == "DELETE"){
-        case isset($_GET["id"]):
-            //TODO clase descuentos::eliminar
-        break;
-        default:    
-            header("HTTP/1.1 403 ILLEGAL REQUEST");
-        break;
-    }
-
-    if($_SERVER[REQUEST_METHOD] == "PUT" || $_SERVER[REQUEST_METHOD] == "PATCH" || $_SERVER[REQUEST_METHOD] == "HEAD" || $_SERVER[REQUEST_METHOD] == "OPTIONS" || $_SERVER[REQUEST_METHOD] == "UPDATE"){
-        header("HTTP/1.1 403 ILLEGAL REQUEST");
     }
