@@ -49,6 +49,7 @@ class descuentos{
             header("HTTP/1.1 500 DISCOUNT NOT CREATED");
             exit;
         }
+        require_once("clientesClass.php");
         if(clientes::actualizar_ultima_compra($wsp) == 0){
             header("HTTP/1.1 201 DISCOUNT CREATED AND USER LAST BUY UPDATED");
         }else{

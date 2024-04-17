@@ -17,7 +17,7 @@ require("assets/clientesClass.php");
             }
         break;
 
-        case 'UPDATE':
+        case 'PATCH':
             if(isset($_GET['wsp_num']) && isset($_GET['ciudad'])){
                 clientes::actualizar_cliente_ciudad($_GET["wsp_num"],$_GET['ciudad']);
             }else{

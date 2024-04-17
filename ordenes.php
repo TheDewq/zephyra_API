@@ -1,5 +1,5 @@
 <?php   
-require("assets/clientesClass.php");
+require("assets/ordenesClass.php");
     switch($_SERVER['REQUEST_METHOD']){
         case 'GET':
             if(empty($_GET)){
@@ -21,7 +21,7 @@ require("assets/clientesClass.php");
             }
         break;
 
-        case 'UPDATE':
+        case 'PATCH':
             if(isset($_GET["id"]) && isset($_GET['status']) && isset($_GET['wsp_num'])){
                 clientes::actualizar_status($_GET["wsp_num"],$_GET["id"],$_GET['status']);
             }else{
