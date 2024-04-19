@@ -1,12 +1,13 @@
 <?php
 
-require("db_connect.php");
+
 
 class productos{
     public static function obtener_todo(){
+        require_once("db_connect.php");
         $server = db_connect();
         
-        $sql = "SELECT * FROM productos;";
+        $sql = "SELECT * FROM productos WHERE disponibilidad != 0;";
         $rpt = $server->prepare($sql);
         try{
             $rpt->execute();
@@ -21,9 +22,10 @@ class productos{
     }
 
     public static function obtener_por_tipo($tipo){
+        require_once("db_connect.php");
         $server = db_connect();
         
-        $sql = "SELECT * FROM productos WHERE tipo = :tipo;";
+        $sql = "SELECT * FROM productos WHERE tipo = :tipo and disponibilidad != 0;";
         $rpt = $server->prepare($sql);
         $rpt->bindParam(":tipo", $tipo);
         try{
@@ -38,9 +40,10 @@ class productos{
         return $json_resultados;
     }
     public static function obtener_por_disponibilidad($disponibilidad){
+        require_once("db_connect.php");
         $server = db_connect();
         
-        $sql = "SELECT * FROM productos WHERE disponibilidad = :disponibilidad;";
+        $sql = "SELECT * FROM productos WHERE disponibilidad > :disponibilidad; and disponibilidad != 0";
         $rpt = $server->prepare($sql);
         $rpt->bindParam(":disponibilidad", $disponibilidad);
         try{
@@ -55,7 +58,7 @@ class productos{
         return $json_resultados;
     }
     public static function nuevo_producto($nombre, $tipo, $precio, $material, $tallas, $files){
-        
+        require_once("db_connect.php");
         $server = db_connect();
         $itter = 0;
         $img_array = array();
@@ -63,7 +66,7 @@ class productos{
             if(isset($files["foto".$itter])){
                 $photo = $files["foto".$itter];
                 $photo_name = $files['foto'.$itter]['name'];
-                move_uploaded_file($photo['tmp_name'], "../img/".$photo_name);
+                move_uploaded_file($photo['tmp_name'], "img/".$photo_name);
                 array_push($img_array,$photo_name);
                 $itter++;
                 continue;

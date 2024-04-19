@@ -8,7 +8,7 @@
             }elseif(isset($_GET['tipo'])){
                 echo productos::obtener_por_tipo($_GET['tipo']);
             }elseif(isset($_GET['disponibilidad'])){
-                echo ordenes::obtener_por_disponibilidad($_GET['disponibilidad']);
+                echo productos::obtener_por_disponibilidad($_GET['disponibilidad']);
             }else{
                 header("HTTP/1.1 403 ILLEGAL REQUEST");
             }

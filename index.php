@@ -1,3 +1,6 @@
+<?php
+    header("HTTP/1.1 403 NOT ALLOWED")
+?>
 <html>
     <head>
         <title>Zephyapi</title>

@@ -73,7 +73,7 @@ class ordenes{
 
     }
 
-    public static function modificar_status($wsp, $id, $status){
+    public static function actualizar_status($wsp, $id, $status){
         $server = db_connect();
         
         $sql = "UPDATE ordenes SET ord_status = :ord_status WHERE id = :id";
@@ -88,7 +88,7 @@ class ordenes{
         }
         if($status == "finalizado"){
             require_once("descuentosClass.php");
-            ordenes::generar_nuevo_descuento($wsp);
+            descuentos::generar_nuevo_descuento($wsp, 1);
         }
         header("HTTP/1.1 200 STATUS MODIFIED");
     }

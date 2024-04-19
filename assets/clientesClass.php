@@ -1,9 +1,9 @@
 <?php
-require("db_connect.php");
 
 
 class clientes{
     public static function obtener_por_wsp($wsp){//->return json
+        require_once("db_connect.php");
         $server = db_connect();
         
         $sql = "SELECT * FROM clientes WHERE wsp_num = :wsp_num ;";
@@ -22,6 +22,7 @@ class clientes{
 
     }
     public static function nuevo_cliente($wsp,$ciudad){
+        require_once("db_connect.php");
         $server = db_connect();
         
         $sql = "INSERT INTO clientes(wsp_num, ciudad) VALUES (:wsp, :ciudad)";
@@ -37,6 +38,7 @@ class clientes{
         header("HTTP/1.1 201 USER SUCCESSFULLY CREATED");
     }
     public static function actualizar_cliente_ciudad($wsp,$ciudad){
+        require_once("db_connect.php");
         $server = db_connect();
         
         $sql = "UPDATE clientes set ciudad = :ciudad WHERE wsp_num= :wsp";
@@ -53,6 +55,7 @@ class clientes{
     }
 
     public static function eliminar_cliente($wsp){
+        require_once("db_connect.php");
         $server = db_connect();
         
         $sql = "DELETE FROM clientes WHERE wsp_num=:wsp";
@@ -66,7 +69,10 @@ class clientes{
         }
         header("HTTP/1.1 201 USER SUCCESSFULLY DELETED");
     }
-    public static function actualizar_ultima_compra($wsp){
+    public static function actualizar_ultima_compra($wsp, $requiredb = 0){
+        if($requiredb == 0){
+            require_once("db_connect.php");
+        }
         $server = db_connect();
         
         $sql = "UPDATE clientes set ultima_compra = curdate() WHERE wsp_num=:wsp";

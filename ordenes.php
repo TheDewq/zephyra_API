@@ -14,8 +14,8 @@ require("assets/ordenesClass.php");
         break;
 
         case 'POST':
-            if(isset($_GET['wsp_num']) && isset($_GET['productos']) && isset($_GET['descuento']) && isset($_GET['total'])){
-                clientes::nueva_orden($_GET['wsp_num'], $_GET['productos'], $_GET['descuento'], $_GET['total']);
+            if(isset($_GET['wsp_num']) && isset($_GET['productos']) && isset($_GET['descuentos']) && isset($_GET['total'])){
+                ordenes::nueva_orden($_GET['wsp_num'], $_GET['productos'], $_GET['descuentos'], $_GET['total']);
             }else{
                 header("HTTP/1.1 403 ILLEGAL REQUEST");
             }
@@ -23,7 +23,7 @@ require("assets/ordenesClass.php");
 
         case 'PATCH':
             if(isset($_GET["id"]) && isset($_GET['status']) && isset($_GET['wsp_num'])){
-                clientes::actualizar_status($_GET["wsp_num"],$_GET["id"],$_GET['status']);
+                ordenes::actualizar_status($_GET["wsp_num"],$_GET["id"],$_GET['status']);
             }else{
                 header("HTTP/1.1 403 ILLEGAL REQUEST");
             }
