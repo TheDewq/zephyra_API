@@ -1,0 +1,96 @@
+istockphoto-1305793676-612x612.jpg]
+istockphoto-1317905526-612x612.jpg]
+istockphoto-1420196149-612x612.jpg]
+istockphoto-1427973893-612x612.jpg]
+istockphoto-1830111752-612x612.jpg]
+
+INSERT INTO productos (nombre, tipo, precio, material, tallas, img)
+VALUES 
+('Camiseta 1', 'camisetas', 50000, 'Algodón', '["S","M","L","XL"]', '[istockphoto-1305793676-612x612.jpg]'),
+('Camiseta 2', 'camisetas', 55000, 'Poliéster', '["S","M","L","XL"]', '[istockphoto-1317905526-612x612.jpg]'),
+('Camiseta 3', 'camisetas', 48000, 'Algodón', '["S","M","L","XL"]', '[istockphoto-1420196149-612x612.jpg]'),
+('Camiseta 4', 'camisetas', 60000, 'Algodón', '["S","M","L","XL"]', '[istockphoto-1427973893-612x612.jpg]'),
+('Camiseta 5', 'camisetas', 52000, 'Poliéster', '["S","M","L","XL"]', '[istockphoto-1830111752-612x612.jpg]');
+
+
+istockphoto-1094472820-612x612.jpg]
+istockphoto-1137288282-612x612.jpg]
+istockphoto-1171954725-612x612.jpg]
+istockphoto-1247725583-612x612.jpg]
+istockphoto-1280846264-612x612.jpg]
+istockphoto-1350815428-612x612.jpg]
+istockphoto-1403145863-612x612.jpg]
+istockphoto-157424247-612x612.jpg]
+istockphoto-497320036-612x612.jpg]
+istockphoto-519768439-612x612.jpg]
+istockphoto-593331604-612x612.jpg]
+istockphoto-810764236-612x612.jpg]
+istockphoto-873358922-612x612.jpg]
+istockphoto-956331600-612x612.jpg]
+
+INSERT INTO productos (nombre, tipo, precio, material, tallas, img)
+VALUES 
+('Accesorio 1', 'accesorios', 25000, 'Cuero', '["Única"]', '[istockphoto-1094472820-612x612.jpg]'),
+('Accesorio 2', 'accesorios', 30000, 'Plástico', '["Única"]', '[istockphoto-1137288282-612x612.jpg]'),
+('Accesorio 3', 'accesorios', 35000, 'Metal', '["Única"]', '[istockphoto-1171954725-612x612.jpg]'),
+('Accesorio 4', 'accesorios', 28000, 'Tela', '["Única"]', '[istockphoto-1247725583-612x612.jpg]'),
+('Accesorio 5', 'accesorios', 32000, 'Plástico', '["Única"]', '[istockphoto-1280846264-612x612.jpg]'),
+('Accesorio 6', 'accesorios', 27000, 'Cuero', '["Única"]', '[istockphoto-1350815428-612x612.jpg]'),
+('Accesorio 7', 'accesorios', 30000, 'Metal', '["Única"]', '[istockphoto-1403145863-612x612.jpg]'),
+('Accesorio 8', 'accesorios', 26000, 'Plástico', '["Única"]', '[istockphoto-157424247-612x612.jpg]'),
+('Accesorio 9', 'accesorios', 29000, 'Cuero', '["Única"]', '[istockphoto-497320036-612x612.jpg]'),
+('Accesorio 10', 'accesorios', 33000, 'Metal', '["Única"]', '[istockphoto-519768439-612x612.jpg]'),
+('Accesorio 11', 'accesorios', 31000, 'Plástico', '["Única"]', '[istockphoto-593331604-612x612.jpg]'),
+('Accesorio 12', 'accesorios', 27000, 'Tela', '["Única"]', '[istockphoto-810764236-612x612.jpg]'),
+('Accesorio 13', 'accesorios', 29000, 'Cuero', '["Única"]', '[istockphoto-873358922-612x612.jpg]'),
+('Accesorio 14', 'accesorios', 30000, 'Metal', '["Única"]', '[istockphoto-956331600-612x612.jpg]');
+
+
+istockphoto-1142211861-612x612.jpg]
+istockphoto-1178258300-612x612.jpg]
+istockphoto-1313183971-612x612.jpg]
+istockphoto-1436346434-612x612.jpg]
+istockphoto-1439783475-612x612.jpg]
+istockphoto-845017500-612x612.jpg]
+
+INSERT INTO productos (nombre, tipo, precio, material, tallas, img)
+VALUES 
+('Hoodie 1', 'hoddies', 70000, 'Algodón', '["S","M","L","XL"]', '[istockphoto-1142211861-612x612.jpg]'),
+('Hoodie 2', 'hoddies', 75000, 'Algodón', '["S","M","L","XL"]', '[istockphoto-1178258300-612x612.jpg]'),
+('Hoodie 3', 'hoddies', 68000, 'Poliéster', '["S","M","L","XL"]', '[istockphoto-1313183971-612x612.jpg]'),
+('Hoodie 4', 'hoddies', 72000, 'Algodón', '["S","M","L","XL"]', '[istockphoto-1436346434-612x612.jpg]'),
+('Hoodie 5', 'hoddies', 69000, 'Algodón', '["S","M","L","XL"]', '[istockphoto-1439783475-612x612.jpg]'),
+('Hoodie 6', 'hoddies', 71000, 'Poliéster', '["S","M","L","XL"]', '[istockphoto-845017500-612x612.jpg]');
+
+istockphoto-137308430-612x612.jpg]
+istockphoto-1436346810-612x612.jpg]
+istockphoto-1481004268-612x612.jpg]
+istockphoto-173239968-612x612.jpg]
+istockphoto-2148402205-612x612.jpg]
+istockphoto-859500828-612x612.jpg]
+
+INSERT INTO productos (nombre, tipo, precio, material, tallas, img)
+VALUES 
+('Pantalón 1', 'pantalones', 60000, 'Denim', '["S","M","L","XL"]', '[istockphoto-137308430-612x612.jpg]'),
+('Pantalón 2', 'pantalones', 65000, 'Algodón', '["S","M","L","XL"]', '[istockphoto-1436346810-612x612.jpg]'),
+('Pantalón 3', 'pantalones', 62000, 'Lino', '["S","M","L","XL"]', '[istockphoto-1481004268-612x612.jpg]'),
+('Pantalón 4', 'pantalones', 63000, 'Poliéster', '["S","M","L","XL"]', '[istockphoto-173239968-612x612.jpg]'),
+('Pantalón 5', 'pantalones', 59000, 'Denim', '["S","M","L","XL"]', '[istockphoto-2148402205-612x612.jpg]'),
+('Pantalón 6', 'pantalones', 64000, 'Algodón', '["S","M","L","XL"]', '[istockphoto-859500828-612x612.jpg]');
+
+
+istockphoto-1174497377-612x612.jpg]
+istockphoto-1249496770-612x612.jpg]
+istockphoto-1308274455-612x612.jpg]
+istockphoto-1350560575-612x612.jpg]
+istockphoto-623270836-612x612.jpg]
+istockphoto-956501428-612x612.jpg]
+
+INSERT INTO productos (nombre, tipo, precio, material, tallas, img)
+VALUES 
+('Zapato 1', 'zapatos', 90000, 'Cuero', '["38","39","40","41","42"]', '[istockphoto-1174497377-612x612.jpg]'),
+('Zapato 2', 'zapatos', 95000, 'Sintético', '["38","39","40","41","42"]', '[istockphoto-1249496770-612x612.jpg]'),
+('Zapato 3', 'zapatos', 92000, 'Cuero', '["38","39","40","41","42"]', '[istockphoto-1308274455-612x612.jpg]'),
+('Zapato 4', 'zapatos', 91000, 'Sintético', '["38","39","40","41","42"]', '[istockphoto-1350560575-612x612.jpg]'),
+('Zapato 5', 'zapatos', 88000, 'Cuero', '["38","39","40","41","42"]', '[istockphoto-623270836-612x612.jpg]'),
+('Zapato 6', 'zapatos', 93000, 'Sintético', '["38","39","40","41","42"]', '[istockphoto-956501428-612x612.jpg]');

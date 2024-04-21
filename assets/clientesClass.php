@@ -35,6 +35,7 @@ class clientes{
             header("HTTP/1.1 500 INTERNAL ERROR");
             exit;
         }
+        
         header("HTTP/1.1 201 USER SUCCESSFULLY CREATED");
     }
     public static function actualizar_cliente_ciudad($wsp,$ciudad){

@@ -1,5 +1,5 @@
 create table productos(
-	id int not null AUTO_INCREMENT,
+	id BIGINT not null AUTO_INCREMENT,
     nombre varchar(64) not null,
     tipo varchar(16) not null,
     precio int not null,
@@ -7,16 +7,16 @@ create table productos(
     material varchar(32),
     tallas varchar(128) not null,
     PRIMARY KEY (id)
-)
+);
 
 create table clientes(
-	wsp_num int(11) not null,
+	wsp_num int not null,
     datos varchar(256) DEFAULT null,
     ciudad varchar(64) not null,
     fecha_creacion date DEFAULT curdate(),
     ultima_compra date DEFAULT curdate(),
     PRIMARY KEY(wsp_num)
-)
+);
 
 create table descuentos(
 	id int not null AUTO_INCREMENT,
@@ -25,7 +25,7 @@ create table descuentos(
     fecha_creacion date DEFAULT curdate(),
     PRIMARY KEY(id),
     FOREIGN KEY (wsp_num) REFERENCES clientes(wsp_num) ON DELETE CASCADE
-)
+);
 
 create table ordenes(
 	id int not null AUTO_INCREMENT,
@@ -37,7 +37,7 @@ create table ordenes(
     ord_status set("inconcluso","confirmado","enviado","finalizado","cancelado","reclamo") DEFAULT "inconcluso",
     PRIMARY KEY(id),
     FOREIGN KEY (wsp_num) REFERENCES clientes(wsp_num) ON DELETE CASCADE
-)
+);
 
 DELIMITER $$
 CREATE PROCEDURE eliminar_registros_antiguos()
@@ -92,3 +92,5 @@ DELIMITER ;
 
 ALTER TABLE `productos` ADD `img` VARCHAR(250) NOT NULL AFTER `tallas`;
 ALTER TABLE `productos` CHANGE `img` `img` VARCHAR(2500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL;
+ALTER TABLE `clientes` CHANGE `wsp_num` `wsp_num` INT(12) NOT NULL;
+ALTER TABLE `clientes` CHANGE `wsp_num` `wsp_num` BIGINT(12) NOT NULL;
